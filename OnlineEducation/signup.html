@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<script src="http://ajax.googleeapis.com/ajax/libs/angularjs/1.4.8/anjular.min.js"></script>
+	<title>sign up form</title>
+	<style>
+	body{
+		background:#323232;
+	}
+	.wrap{
+		width: 350px;
+		margin:auto;
+		background: #00adee;
+		margin-top: 50px;
+		padding: "5px";
+	}
+	form{
+		padding: 10px;
+		font-family: arial;
+		border: 1px dotted white;
+		margin:10px;
+	}
+	h2{
+		text-align:center;
+		background:orange;
+		color:white;
+		padding:10px;
+		border-radius: 10px; 
+	}
+	input{
+		padding: 10px;
+		margin: 5px;
+		border-radius: 5px;
+		border: none;
+	}	
+	input[type=text], input[type=email],input[type=number],input[type=password]{
+		width: 90%;
+	}
+	input[type=submit]{
+		width:95%;
+		background: orange;
+		cursor: pointer;
+		font-size: 18px;
+		font-weight: bold;
+		color:white;
+
+	}
+	input[type=submit]:hover{
+		background: blue;
+	}
+	select{
+		padding:10px;
+		width:32%;
+		border-radius:5px;
+	}
+	</style>
+	
+
+	
+
+</head>
+<body>
+
+	<div class="wrap">
+		<form action="registration.php" onsubmit="return validation()" class="bg-light" method="POST">
+			<h2> SignUp Free</h2>
+			<input type="text" name="username" class="form-control" id="username" placeholder="Your Name">
+			<span id="Username" class="text-danger font weight-bold"></span>
+			<input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
+			<span id="Email" class="text-danger font weight-bold"></span>
+            <input type="text" name="mobile" class="form-control" id="mobilenumber" placeholder="Mobile Number">
+            <span id="number" class="text-danger font-weight-bold"></span>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <span id="Password" class="text-danger font-weight-bold"></span>
+            <input type="password" name="conformpassword" class="form-control" id="conformpassword" placeholder="conform password">
+            <span id="Conformpassword" class="text-danger font-weight-bold"></span>
+                    
+                    
+                    
+               
+           
+           <label>DOB</label><input type="date" name="date1" class="form control" id="date" placeholder="DOB">
+           <span id="Date" class="text-danger font-weight-bold"></span>
+
+             <br>
+             <br>
+
+<form action="registration.php" method="post" onsubmit="return validate()">
+<span id="Gen">
+Gender:
+<input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+</span>
+
+<br><br>
+
+
+
+
+
+
+                   
+          <a href="loginuser.php"><input type="submit" name="insert"  value="submit now"></a>
+             
+        
+
+        </form>
+       </div>
+<script type="text/javascript">
+	function validation(){ 
+		var username = document.getElementById('username').value;
+		
+
+			if(username ==""){
+			document.getElementById('Username').innerHTML="** Please fill the username" ;
+			return false;
+		}
+		if((username.length <=2) || (username.length> 30)){
+			document.getElementById('Username').innerHTML="** user length mustbe 3 to 29" ;
+			return false;
+		}
+		if(!isNaN(username)){
+			document.getElementById('Username').innerHTML="** only characters are allowed " ;
+			return false;
+
+}
+
+        var email = document.getElementById('email').value;
+		
+		if(email ==""){
+			document.getElementById('Email').innerHTML="** Please fill the email id" ;
+			return false;
+        
+		
+		}
+           	var number= document.getElementById('mobilenumber').value;
+			
+			if( number==""){
+			document.getElementById('number').innerHTML=" ** Please fill the Mobile number" ;
+			return false;
+		}
+           if(isNaN(number)){
+			document.getElementById('number').innerHTML="** mobile number must be digit" ;
+			return false;
+		}
+if(number.length!=10){
+	
+		
+			document.getElementById('number').innerHTML="** number not less than 10 digit" ;
+			return false;
+}
+
+
+
+
+
+		var password= document.getElementById('password').value;
+			if(password ==""){
+			document.getElementById('Password').innerHTML= " **Please fill the password" ;
+			return false;
+		}
+			if((password.length <=6) || (password.length> 30)){
+			document.getElementById('Password').innerHTML="** password length mustbe 6 to 29" ;
+			return false;
+		
+        
+
+         
+		
+         
+	   }
+	var conformpassword= document.getElementById('conformpassword').value;
+				if(conformpassword ==""){
+		document.getElementById('Conformpassword').innerHTML = " **Please fill the conform password field" ;
+		return false;
+	}
+
+
+				if(password!=conformpassword){
+			document.getElementById('Conformpassword').innerHTML="** passwords are not matching" ;
+			return false;
+
+
+}
+var date=document.getElementById('date').value;
+           if(date==""){
+           	document.getElementById('Date').innerHTML=" ** date should be filled";
+           	return false;
+           }
+
+ 
+var a= 0, rdbtn=document.getElementsByName("gender")
+for(i=0;i<rdbtn.length;i++) {
+if(rdbtn.item(i).checked == false) {
+a++;
+}
+}
+
+if(a == rdbtn.length) {
+document.getElementById("Gen").innerHTML= "** gender have to fill";
+return false;
+} 
+window.loaction.assign("./registration.php");
+}
+
+
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

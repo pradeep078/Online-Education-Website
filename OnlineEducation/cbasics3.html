@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	h1{
+			font-size: 30px;
+			color: green;
+		}
+		
+		body{
+			background-color: lightblue;
+		}
+	</style>
+
+
+</head>
+<body>
+	<h1>C Programming Questions and Answers - Data Types and Sizes:</h1>
+<p style="font-size: 20x;color: blue">
+1. Comment on the output of this C code?
+
+   &nbsp #include <stdio.h>
+   &nbsp int main()
+   &nbsp {
+        &nbsp &nbsp int a[5] = {1, 2, 3, 4, 5};
+        &nbsp &nbsp int i;
+        &nbsp &nbsp for (i = 0; i < 5; i++)
+            &nbsp &nbsp &nbsp if ((char)a[i] == '5')
+                &nbsp &nbsp &nbsp &nbsp printf("%d\n", a[i]);
+            &nbsp &nbsp &nbsp else
+                &nbsp &nbsp &nbsp &nbsp printf("FAIL\n");
+    &nbsp }</p>
+<p style="font-size: 18px;color: purple">a) The compiler will flag an error<br>
+b) The program will compile and print the output 5<br>
+c) The program will compile and print the ASCII value of 5<br>
+d) The program will compile and print FAIL for 5 times<br>
+</p>
+
+<p style="color: black">Answer: d</p>
+<p style="color: red">Explanation: The ASCII value of 5 is 53, the char type-casted integral value 5 is 5 only.</p>
+<p style="color: black">Output:<br>
+$ cc pgm1.c<br>
+$ a.out<br>
+FAILED<br>
+FAILED<br>
+FAILED<br>
+FAILED<br>
+FAILED</p>
+
+<p style="font-size: 20x;color: blue">
+2. The format identifier '%i' is also used for _____ data type.</p>
+<p style="font-size: 18px;color: purple">a) char<br>
+b) int<br>
+c) float<br>
+d) double<br>
+</p>
+
+<p style="color: black">Answer: b</p>
+<p style="color: red">Explanation: Both %d and %i can be used as a format identifier for int data type.</p>
+<p style="font-size: 20x;color: blue">3. Which data type is most suitable for storing a number 65000 in a 32-bit system?</p>
+<p style="font-size: 18px;color: purple">
+a) signed short<br>
+b) unsigned short<br>
+c) long<br>
+d) int<br>
+</p>
+
+<p style="color: black">Answer: b</p>
+<p style="color: red">Explanation: 65000 comes in the range of short (16-bit) which occupies the least memory. Signed short ranges from -32768 to 32767 and hence we should use unsigned short.</p>
+<p style="font-size: 20x;color: blue">4. Which of the following is a User-defined data type?</p>
+<p style="font-size: 18px;color: purple">
+a) typedef int Boolean;<br>
+b) typedef enum {Mon, Tue, Wed, Thu, Fri} Workdays;<br>
+c) struct {char name[10], int age};<br>
+d) all of the mentioned<br>
+</p>
+
+<p style="color: black">Answer: </p>
+<p style="color: red">Explanation: typedef and struct are used to define user-defined data types.</p>
+<p style="font-size: 20x;color: blue">5. What is the size of an int data type?</p>
+<p style="font-size: 18px;color: purple">
+a) 4 Bytes<br>
+b) 8 Bytes<br>
+c) Depends on the system/compiler<br>
+d) Cannot be determined<br>
+</p>
+
+<p style="color: black">Answer: c</p>
+<p style="color: red">Explanation: The size of the data types depend on the system.</stdio.h><p>
+<p style="font-size: 18px;color: purple"><p style="font-size: 20x;color: blue">6. What is the output of the following C code?</p>
+
+    #include  <stdio.h>
+    int main()
+    {
+       signed char chr;
+       chr = 128;
+       printf("%d\n", chr);
+       return 0;
+    }
+a) 128<br>
+b) -128<br>
+c) Depends on the compiler<br>
+d) None of the mentioned<br>
+</p>
+
+<p style="color: black">Answer: b</p>
+<p style="color: red">Explanation: signed char will be a negative number.</p>
+Output:
+$ cc pgm2.c
+$ a.out
+-128
+<p style="font-size: 20x;color: blue">7. Comment on the output of this C code?</p>
+    #include  <stdio.h>
+    int main()
+    {
+        char c;
+        int i = 0;
+        FILE *file;
+        file = fopen("test.txt", "w+");
+        fprintf(file, "%c", 'a');
+        fprintf(file, "%c", -1);
+        fprintf(file, "%c", 'b');
+        fclose(file);
+        file = fopen("test.txt", "r");
+        while ((c = fgetc(file)) !=  -1)
+            printf("%c", c);
+        return 0;
+    }
+<p style="font-size: 18px;color: purple"> 
+a) a<br>
+b) Infinite loop<br>
+c) Depends on what fgetc returns<br>
+d) Depends on the compiler<br>
+</p>
+
+<p style="color: black">Answer: a</p>
+<p style="color: red">Explanation: None.</p>
+Output:
+$ cc pgm3.c
+$ a.out
+a
+<p style="font-size: 20x;color: blue">8. What is short int in C programming?</p>
+<p style="font-size: 18px;color: purple"> 
+a) The basic data type of C<br>
+b) Qualifier<br>
+c) Short is the qualifier and int is the basic datatype<br>
+d) All of the mentioned</p>
+
+<p style="color: black">Answer: c</p>
+<p style="color: red">Explanation: None.</p>
+</body>
+</html>

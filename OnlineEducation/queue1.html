@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		h1{
+			font-size: 30px;
+			color: green;
+		}
+		body{
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+<h1>This set of Data Structure Multiple Choice Questions & Answers (MCQs) focuses on "Queue using Array".</h1>
+<p style="color: blue">
+1. Which of the following properties is associated with a queue?<br>
+a) First In Last Out<br>
+b) First In First Out<br>
+c) Last In First Out<br>
+d) None of the mentioned<br>
+
+<p style="color: black">Answer: b</p>
+Explanation: Queue follows First In First Out structure.<br><br>
+<p style="color: blue">2. In a circular queue, how do you increment the rear end of the queue?<br>
+a) rear++<br>
+b) (rear+1) % CAPACITY<br>
+c) (rear % CAPACITY)+1<br>
+d) rear-<br>
+
+<p style="color: black">Answer: b</p>
+Explanation: Ensures rear takes the values from 0 to (CAPACITY-1).<br>
+<p style="color: blue">3. What is the term for inserting into a full queue known as?<br>
+a) overflow<br>
+b) underflow<br>
+c) null pointer exception<br>
+d) all of the mentioned<br>
+
+
+<p style="color: black">Answer: a</p>
+Explanation: Just as stack, inserting into a full queue is termed overflow.<br>
+<p style="color: blue">4. What is the time complexity of enqueue operation?<br>
+a) O(logn)<br>
+b) O(nlogn)<br>
+c) O(n)<br>
+d) O(1)<br>
+
+<p style="color: black">Answer: d</p>
+Explanation: Enqueue operation is at the rear end, it takes O(1) time to insert a new item into the queue.<br>
+<p style="color: blue">5. What does the following piece of code do?<br>
+
+public Object function()<br>
+{<br>
+	if(isEmpty())<br>
+	return -999;<br>
+	else<br>
+	{<br>
+		Object high;<br>
+		high = q[front];<br>
+		return high;<br>
+	}<br>
+}<br>
+a) Dequeue<br>
+b) Enqueue<br>
+c) Return the front element<br>
+d) None of the mentioned<br>
+
+
+<p style="color: black">Answer: c</p>
+Explanation: q[front] gives the element at the front of the queue, since we are not moving the ‘front’ to the next element,
+it is not a dequeue operation.<br>
+<p style="color: blue">6. What is the need for a circular queue?<br>
+a) effective usage of memory<br>
+b) easier computations<br>
+c) all of the mentioned<br>
+d) none of the mentioned<br>
+
+
+<p style="color: black">Answer: a</p>
+Explanation: In a linear queue, dequeue operation causes the starting elements of the array to be empty, and there is no way you can use that space, while in a circular queue, you can effectively use that space.<br>
+<p style="color: blue">7. Which of the following represents a dequeue operation? (count is the number of elements in the queue)<br>
+a)<br>
+
+public Object dequeue()<br>
+{<br>
+	if(count == 0)<br>
+	{<br>
+		System.out.println("Queue underflow");<br>
+		return 0;<br>
+	}<br>
+	else<br>
+	{<br>
+		Object ele = q[front];<br>
+		q[front] = null;<br>
+		front = (front+1)%CAPACITY;<br>
+		count--;<br>
+		return ele;<br>
+	}<br>
+}<br>
+b)<br>
+
+public Object dequeue()<br>
+{<br>
+	if(count == 0)<br>
+	{<br>
+		System.out.println("Queue underflow");<br>
+		return 0;<br>
+	}<br>
+	else<br>
+	{<br>
+		Object ele = q[front];<br>
+		front = (front+1)%CAPACITY;<br>
+		q[front] = null;<br>
+		count--;<br>
+		return ele;<br>
+}<br>
+c)<br>
+
+public Object dequeue()<br>
+{<br>
+	if(count == 0)<br>
+	{<br>
+		System.out.println("Queue underflow");<br>
+		return 0;<br>
+	}<br>
+	else<br>
+	{<br>
+		front = (front+1)%CAPACITY;<br>
+		Object ele = q[front];<br>
+		q[front] = null;<br>
+		count--;<br>
+		return ele;<br>
+	}<br>
+}<br>
+d)<br>
+
+public Object dequeue()<br>
+{<br>
+	if(count == 0)<br>
+	{<br>
+		System.out.println("Queue underflow");<br>
+		return 0;<br>
+	}<br>
+	else<br>
+	{<br>
+		Object ele = q[front];<br>
+		q[front] = null;<br>
+		front = (front+1)%CAPACITY;<br>
+		return ele;<br>
+		count--;<br>
+	}<br>
+}<br>
+
+<p style="color: black">Answer: a</p>
+Explanation: Dequeue removes the first element from the queue, and ‘front’ points to the front end of the queue. Note that even though option d is performing the dequeue operation, it is returning from the function before decrementing the count value.
+ <br>
+ 
+<p style="color: blue">8. Which of the following best describes the growth of a linear queue at runtime? (Q is the original queue, size() returns the number of elements in the queue)<br>
+a)<br>
+private void expand()<br>
+{<br>
+	int length = size();<br>
+	int[] newQ = new int[length<<1];<br>
+	for(int i=front; i<=rear; i++)<br>
+	{<br>
+		newQ[i-front] = Q[i%CAPACITY];<br>
+	}<br>
+	Q = newQ;<br>
+	front = 0;<br>
+	rear = size()-1;<br>
+}<br>
+b)<br>
+private void expand()<br>
+{<br>
+	int length = size();<br>
+	int[] newQ = new int[length<<1];<br>
+	for(int i=front; i<=rear; i++)<br>
+	{<br>
+		newQ[i-front] = Q[i%CAPACITY];<br>
+	}<br>
+	Q = newQ;<br>
+}<br>
+c)<br>
+
+private void expand()<br>
+{<br>
+	int length = size();<br>
+	int[] newQ = new int[length<<1];<br>
+	for(int i=front; i<=rear; i++)<br>
+	{<br>
+		newQ[i-front] = Q[i];<br>
+	}<br>
+	Q = newQ;<br>
+	front = 0;<br>
+	rear = size()-1;<br>
+}<br>
+d)<br>
+
+private void expand()<br>
+{<br>
+	int length = size();<br>
+	int[] newQ = new int[length*2];<br>
+	for(int i=front; i<=rear; i++)<br>
+	{<br>
+		newQ[i-front] = Q[i%CAPACITY];<br>
+	}<br>
+	Q = newQ;<br>
+}<br>
+<p style="color: black">Answer: a</p>
+Explanation: A common technique to expand the size of array at run time is simply to double the size. Create a new array of double the previous size and copy all the elements, after copying do not forget to assign front = 0 and rear = size()-1, as these are necessary to maintain the decorum of the queue operations.
+ <br>
+ 
+9. What is the space complexity of a linear queue having n elements?<br>
+a) O(n)<br>
+b) O(nlogn)<br>
+c) O(logn)<br>
+d) O(1)<br>
+
+
+<p style="color: black">Answer: a</p>
+Explanation: Because there are n elements.<br>
+<p style="color: blue">10. What is the output of the following piece of code?<br>
+
+public class CircularQueue<br>
+{<br>
+	protected static final int CAPACITY = 100;<br>
+	protected int size,front,rear;<br>
+	protected Object q[];<br>
+	int count = 0;<br>
+ <br>
+	public CircularQueue()<br>
+	{<br>
+		this(CAPACITY);<br>
+	}<br>
+	public CircularQueue (int n)<br>
+	{<br>
+		size = n;<br>
+		front = 0;<br>
+		rear = 0;<br>
+		q = new Object[size];<br>
+	}<br>
+ <br>
+ 
+	public void enqueue(Object item)<br>
+	{<br>
+		if(count == size)<br>
+		{<br>
+			System.out.println("Queue overflow");<br>
+				return;<br>
+		}<br>
+		else<br>
+		{<br>
+			q[rear] = item;<br>
+			rear = (rear+1)%size;<br>
+			count++;<br>
+		}<br>
+	}<br>
+	public Object dequeue()<br>
+	{<br>
+		if(count == 0)<br>
+		{<br>
+			System.out.println("Queue underflow");<br>
+			return 0;<br>
+		}<br>
+		else<br>
+		{<br>
+			Object ele = q[front];<br>
+			q[front] = null;<br>
+			front = (front+1)%size;<br>
+			count--;<br>
+			return ele;<br>
+		}<br>
+	}<br>
+	public Object frontElement()<br>
+	{<br>
+		if(count == 0)<br>
+		return -999;<br>
+		else<br>
+		{<br>
+			Object high;<br>
+			high = q[front];<br>
+			return high;<br>
+		}<br>
+	}<br>
+	public Object rearElement()<br>
+	{<br>
+		if(count == 0)<br>
+		return -999;<br>
+		else<br>
+		{<br>
+			Object low;<br>
+			rear = (rear-1)%size;<br>
+			low = q[rear];<br>
+			rear = (rear+1)%size;<br>
+			return low;<br>
+		}<br>
+	}<br>
+}<br>
+public class CircularQueueDemo<br>
+{<br>
+	public static void main(String args[])<br>
+	{<br>
+		Object var;<br>
+		CircularQueue myQ = new CircularQueue();<br>
+		myQ.enqueue(10);<br>
+		myQ.enqueue(3);<br>
+		var = myQ.rearElement();<br>
+		myQ.dequeue();<br>
+		myQ.enqueue(6);<br>
+		var = mQ.frontElement();<br>
+		System.out.println(var+" "+var);<br>
+	}<br>
+}<br>
+a) 3 3<br>
+b) 3 6<br>
+c) 6 6<br>
+d) 10 6<br>
+
+
+<p style="color: black">Answer: a</p>
+Explanation: First enqueue 10 and 3 into the queue, followed by a dequeue(removes 10), followed by an enqueue(6), At this point, 3 is at the front end of the queue and 6 at the rear end, hence a call to frontElement() will return 3 which is displayed twice.
+</p>
+</body>
+</html>

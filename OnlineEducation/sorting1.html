@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		h1{
+			font-size: 30px;
+			color: green;
+		}
+		body{
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>This set of Data Structure Multiple Choice Questions & Answers (MCQs) focuses on "Selection Sort".</h1>
+<div style="color: blue">
+1. What is an in-place sorting algorithm?<br>
+a) It needs O(1) or O(logn) memory to create auxiliary locations<br>
+b) The input is already sorted and in-place<br>
+c) It requires additional storage<br>
+d) None of the mentioned<br>
+
+<p style="color: black">Answer: a</p>
+<p style="color: red">Explanation: Auxiliary memory is required for storing the data temporarily.</p>
+2. In the following scenarios, when will you use selection sort?<br>
+a) The input is already sorted<br>
+b) A large file has to be sorted<br>
+c) Large values need to be sorted with small keys<br>
+d) Small values need to be sorted with large keys<br>
+
+<p style="color: black">Answer: c</p>
+<p style="color: red">Explanation: Selection is based on keys, hence a file with large values and small keys can be efficiently sorted with selection sort.</p>
+3. What is the worst case complexity of selection sort?<br>
+a) O(nlogn)<br>
+b) O(logn)<br>
+c) O(n)<br>
+d) O(n2)<br>
+
+<p style="color: black">Answer: d</p>
+<p style="color: red">Explanation: Selection sort creates a sub-list, LHS of the 'min' element is already sorted and RHS is yet to be sorted. Starting with the first element the 'min' element moves towards the final element.</p>
+4. Select the appropriate code that performs selection sort.<br>
+a)<br>
+
+        &nbsp &nbsp &nbsp int min;<br>
+	&nbsp &nbspfor(int j=0; j<arr.length-1; j++)<br>
+	{<br>
+		&nbsp &nbsp min = j;<br>
+		&nbsp &nbsp for(int k=j+1; k<=arr.length-1; k++)<br>
+		&nbsp {<br>
+			&nbsp &nbsp if(arr[k] < arr[min])<br>
+				&nbsp &nbsp &nbsp min = k;<br>
+		&nbsp }<br>
+		&nbsp &nbsp int temp = arr[min];<br>
+		&nbsp &nbsp arr[min] = arr[j];<br>
+		&nbsp &nbsp arr[j] = temp;<br>
+       }<br>
+b)<br>
+
+        &nbsp &nbsp &nbsp int min;<br>
+	&nbsp &nbsp for(int j=0; j<arr.length-1; j++)<br>
+	{<br>
+		&nbsp &nbsp min = j;<br>
+		&nbsp &nbsp for(int k=j+1; k<=arr.length; k++)<br>
+		&nbsp &nbsp {<br>
+			&nbsp &nbsp &nbsp if(arr[k] < arr[min])<br>
+			&nbsp &nbsp &nbsp 	min = k;<br>
+	&nbsp 	}<br>
+		&nbsp &nbsp &nbsp  int temp = arr[min];<br>
+	&nbsp &nbsp &nbsp  	arr[min] = arr[j];<br>
+	&nbsp &nbsp &nbsp 	arr[j] = temp;<br>
+	}<br>
+c)<br>
+
+       &nbsp &nbsp &nbsp  int min;<br>
+	&nbsp &nbsp &nbsp  for(int j=0; j<arr.length-1; j++)<br>
+	&nbsp &nbsp &nbsp  {<br>
+	&nbsp &nbsp &nbsp 	min = j;<br>
+	&nbsp &nbsp &nbsp 	for(int k=j+1; k<=arr.length-1; k++)<br>
+	&nbsp &nbsp &nbsp 	{<br>
+		&nbsp &nbsp &nbsp &nbsp	if(arr[k] > arr[min])<br>
+		&nbsp &nbsp &nbsp &nbsp		min = k;<br>
+		&nbsp &nbsp &nbsp }<br>
+	&nbsp &nbsp &nbsp &nbsp	int temp = arr[min];<br>
+	&nbsp &nbsp &nbsp &nbsp	arr[min] = arr[j];<br>
+	&nbsp &nbsp &nbsp &nbsp	arr[j] = temp;<br>
+	}<br>
+d)<br>
+
+    &nbsp &nbsp &nbsp     int min;<br>
+&nbsp &nbsp &nbsp &nbsp	for(int j=0; j<arr.length-1; j++)<br>
+&nbsp &nbsp &nbsp &nbsp	{<br>
+	&nbsp &nbsp &nbsp &nbsp	min = j;<br>
+	&nbsp &nbsp &nbsp &nbsp	for(int k=j+1; k<=arr.length; k++)<br>
+	&nbsp &nbsp &nbsp &nbsp 	{<br>
+			&nbsp &nbsp &nbsp &nbsp 	if(arr[k] > arr[min])<br>
+				&nbsp &nbsp &nbsp &nbsp 	min = k;<br>
+		&nbsp &nbsp &nbsp &nbsp 	}<br>
+		&nbsp &nbsp &nbsp &nbsp 	int temp = arr[min];<br>
+		&nbsp &nbsp &nbsp &nbsp 	arr[min] = arr[j];<br>
+		&nbsp &nbsp &nbsp &nbsp 	arr[j] = temp;<br>
+	&nbsp &nbsp &nbsp &nbsp 	}<br>
+
+<p style="color: black">Answer: a</p>
+<p style="color: red">Explanation: Starting with the first element as 'min' element, selection sort loops through the list to select the least element which is then swapped with the 'min' element.</p>
+ 
+ 
+5. What is the advantage of selection sort over other sorting techniques?<br>
+a) It requires no additional storage space<br>
+b) It is scalable<br>
+c) It works best for inputs which are already sorted<br>
+d) It is faster than any other sorting technique<br>
+
+
+<p style="color: black">Answer: a</p>
+<p style="color: red">Explanation: Since selection sort is an in-place sorting algorithm, it does not require additional storage.</p>
+
+
+6. What is the average case complexity of selection sort?<br>
+a) O(nlogn)<br>
+b) O(logn)<br>
+c) O(n)<br>
+d) O(n2)<br>
+
+<p style="color: black">Answer: d</p>
+<p style="color: red">Explanation: In the average case, even if the input is partially sorted, selection sort behaves as if the entire array is not sorted. Selection sort is insensitive to input.</p>
+7. What is the disadvantage of selection sort?<br>
+a) It requires auxiliary memory<br>
+b) It is not scalable<br>
+c) It can be used for small keys<br>
+d) None of the mentioned<br>
+
+
+<p style="color: black">Answer: b</p>
+<p style="color: red">Explanation: As the input size increases, the performance of selection sort decreases.</p>
+8. The given array is arr = {3,4,5,2,1}. The number of iterations in bubble sort and selection sort respectively are,<br>
+a) 5 and 4<br>
+b) 4 and 5<br>
+c) 2 and 4<br>
+d) 2 and 5<br>
+
+<p style="color: black">Answer: a</p>
+<p style="color: red">Explanation: Since the input array is not sorted, bubble sort takes 5 iterations and selection sort takes 4(n-1) iterations.</p>
+9. The given array is arr = {1,2,3,4,5}. (bubble sort is implemented with a flag variable)The number of iterations in selection sort and bubble sort respectively are,<br>
+a) 5 and 4<br>
+b) 1 and 4<br>
+c) 0 and 4<br>
+d) 4 and 1<br>
+
+
+<p style="color: black">Answer: b</p>
+<p style="color: red">Explanation: Selection sort is insensitive to input, hence 4(n-1) iterations. Whereas bubble sort iterates only once to set the flag to 0 as the input is already sorted.</p>
+10. What is the best case complexity of selection sort?<br>
+a) O(nlogn)<br>
+b) O(logn)<br>
+c) O(n)<br>
+d) O(n2)<br>
+
+<p style="color: black">Answer: d</p>
+<p style="color: red">Explanation: The best, average and worst case complexities of selection sort is O(n2).
+(n-1) + (n-2) + (n-3) + …. + 1 = (n(n-1))/2 ~ (n2)/2.</p>
+</div>
+</body>
+</html>
